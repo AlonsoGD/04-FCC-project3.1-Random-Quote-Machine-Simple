@@ -1,21 +1,34 @@
 window.onload = function () {
-    var genQuoteButton = $("#genQuoteButton");
-    var quote = $("#quoteBox");
-
-    genQuoteButton.click(function() {
-        quote.html("TEST");        
-    });
-
-    var apiEndPointURL = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
-    //var callbackURL = "";
+    var $genQuoteButton = $("#genQuoteButton");
+    var $quoteBox = $("#quoteBox");
+    var $quote;
+    var $author;
     
-    var response = $.ajax({
-			type: "GET",
-			url: apiEndPointURL,
-			dataType: 'JSONP'});
-			success: alert("Loaded!");
-			
-					
+    function genQuote() { 
+       //var apiEndPointURL = "https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?"
+        $.ajax({
+            type: "GET",
+            url: "https://api.forismatic.com/api/1.0/",
+            jsonp: 'jsonp',
+            dataType: "jsonp",
+            crossDomain: "true",
+            data: {
+                method: "getQuote",
+                format: "jsonp",
+                lang: "en"
+            },
+            success: function(response) {
+                $quote = response.quoteText;
+                $author = response.quoteAuthor; 
+            }
+        });
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    genQuote();
+    $genQuoteButton.click(function() {
+        $quoteBox.html('"' + $quote + '"' + "<br><strong>" + $author + "</strong>");
+        genQuote();        
+    });
 };
 
  
