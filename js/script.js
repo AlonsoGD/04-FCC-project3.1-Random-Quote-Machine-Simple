@@ -33,7 +33,7 @@ window.onload = function () {
     }
     //Function to create a url with the quote and the author, so it prepopulate a tweet. It also chages the href in the html for the link in the twitter icon
     function genTweetUrl() {
-        $tweetUrl = "https://twitter.com/intent/tweet?hashtags=quote&text=" + $quote + "- " + $author;
+        $tweetUrl = "https://twitter.com/intent/tweet?hashtags=quote&text=" + '"' + $quote + '" ' + '- ' + $author;
         $twitterButton.attr("href", $tweetUrl);
     }
     /////////////////////////////////////////////////////////////////////
