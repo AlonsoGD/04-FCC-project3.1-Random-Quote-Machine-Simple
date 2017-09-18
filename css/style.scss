@@ -8,14 +8,15 @@ body {
 }
 
 footer {
-    min-height: 35px !important;
-    padding-top: 5px;
+    //min-height: 35px !important;
+    padding: 10px;
     background-color: #efefef;
-    text-align: center;
     font-size: 12pt;
 
-    .email {
+    .footerlinks {
+        padding: 10px;
         color: black;
+        font-size: 12pt;
     }
 }
 

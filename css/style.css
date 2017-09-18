@@ -5,13 +5,13 @@ body {
   padding-bottom: 75px; }
 
 footer {
-  min-height: 35px !important;
-  padding-top: 5px;
+  padding: 10px;
   background-color: #efefef;
-  text-align: center;
   font-size: 12pt; }
-  footer .email {
-    color: black; }
+  footer .footerlinks {
+    padding: 10px;
+    color: black;
+    font-size: 12pt; }
 
 header {
   font-family: 'Baloo Tammudu', cursive;
