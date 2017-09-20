@@ -1,5 +1,5 @@
 //Waits till the page is loaded to run the code
-window.onload = function () {                       
+$(document).ready(function() {                    
     var $genQuoteButton = $("#genQuoteButton");
     var $quoteBox = $("#quoteBox");
     var $twitterButton = $("#twitterButton");
@@ -52,6 +52,6 @@ window.onload = function () {
         });
         $quoteBox.fadeIn(400);
     });
-};
+});
 
  
