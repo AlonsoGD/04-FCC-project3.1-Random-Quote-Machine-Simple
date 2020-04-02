@@ -1,5 +1,5 @@
 //Waits till the page is loaded to run the code
-$(document).ready(function() {                    
+$(document).ready(function() {                  
     var $genQuoteButton = $("#genQuoteButton");
     var $quoteBox = $("#quoteBox");
     var $twitterButton = $("#twitterButton");
@@ -14,6 +14,7 @@ $(document).ready(function() {
             url: "https://api.forismatic.com/api/1.0/",
             jsonp: 'jsonp',
             dataType: "jsonp",
+            jsonCallback: "callback",
             crossDomain: "true",
             data: {
                 method: "getQuote",
